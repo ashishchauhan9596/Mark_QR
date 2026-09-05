@@ -110,3 +110,4 @@ clearLogoButton.addEventListener('click', (event) => {
 downloadButton.addEventListener('click', () => { const link = document.createElement('a'); link.download = 'markqr-business-code.png'; link.href = canvas.toDataURL('image/png'); link.click(); });
 updateNameMonogram();
 updateIdentityState();
+renderQr();
