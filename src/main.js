@@ -25,14 +25,13 @@ function updateIdentityState() {
   identityControls.disabled = !contentInput.value.trim();
 }
 
-function getBusinessIcon(name) {
-  const hash = [...name].reduce((total, character) => total + character.charCodeAt(0), 0);
-  return ['✦', '◆', '✣', '◈'][hash % 4];
+function getBusinessInitials(name) {
+  return name.trim().split(/\s+/).filter(Boolean).map((word) => word.replace(/[^a-zA-Z]/g, '').charAt(0).toUpperCase()).filter(Boolean).slice(0, 3).join(' ');
 }
 
 function updateNameMonogram() {
-  const icon = getBusinessIcon(businessNameInput.value.trim());
-  nameMonogram.textContent = icon;
+  const initials = getBusinessInitials(businessNameInput.value);
+  nameMonogram.textContent = initials;
   nameMonogram.hidden = Boolean(logoImage) || !businessNameInput.value.trim();
   if (!logoImage) {
     uploadTitle.textContent = businessNameInput.value.trim() ? 'Generated business mark' : 'Add logo';
@@ -85,7 +84,7 @@ async function renderQr() {
       context.font = `600 ${logoSize * 0.34}px "DM Sans", sans-serif`;
       context.textAlign = 'center';
       context.textBaseline = 'middle';
-      context.fillText(getBusinessIcon(businessNameInput.value.trim()), canvas.width / 2, canvas.height / 2);
+      context.fillText(getBusinessInitials(businessNameInput.value), canvas.width / 2, canvas.height / 2);
     }
     context.restore();
   }
