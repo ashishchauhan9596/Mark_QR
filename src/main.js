@@ -2,6 +2,7 @@ import QRCode from 'qrcode';
 import './style.css';
 
 const contentInput = document.querySelector('#qr-content');
+const clearContentButton = document.querySelector('#clear-content');
 const businessNameInput = document.querySelector('#business-name');
 const identityControls = document.querySelector('#identity-controls');
 const canvas = document.querySelector('#qr-canvas');
@@ -93,7 +94,11 @@ async function renderQr() {
   scanDetail.textContent = logoImage ? 'Logo embedded · High contrast' : businessNameInput.value.trim() ? 'Business mark embedded · High contrast' : 'High contrast · Print ready';
 }
 
-contentInput.addEventListener('input', () => { updateIdentityState(); renderQr(); });
+contentInput.addEventListener('input', () => {
+  clearContentButton.hidden = !contentInput.value.trim();
+  updateIdentityState();
+  renderQr();
+});
 businessNameInput.addEventListener('input', () => { updateNameMonogram(); renderQr(); });
 foregroundInput.addEventListener('input', renderQr);
 backgroundInput.addEventListener('input', renderQr);
@@ -142,7 +147,14 @@ clearLogoButton.addEventListener('mousedown', (event) => {
   event.preventDefault();
   event.stopPropagation();
 });
+clearContentButton.addEventListener('click', () => {
+  contentInput.value = '';
+  clearContentButton.hidden = true;
+  updateIdentityState();
+  renderQr();
+});
 downloadButton.addEventListener('click', () => { const link = document.createElement('a'); link.download = 'markqr-business-code.png'; link.href = canvas.toDataURL('image/png'); link.click(); });
 updateNameMonogram();
 updateIdentityState();
+clearContentButton.hidden = !contentInput.value.trim();
 renderQr();
