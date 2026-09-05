@@ -17,6 +17,8 @@
 .identity-fieldset:disabled .section-label { color: #a49b8c; }
 .clear-logo { position: absolute; top: 8px; right: 8px; z-index: 2; width: 22px; height: 22px; border: 0; border-radius: 50%; background: #183b35; color: #fffdf8; font-size: 17px; line-height: 19px; padding: 0; }
 .clear-logo:hover { background: #e75c3d; }
+.upload-wrap { min-width: 0; position: relative; }
+.upload-wrap .upload-zone { height: 100%; }
 .business-name-label { margin-top: 17px; }
 .business-name-label span { color: #a49b8c; font: 9px 'DM Mono', monospace; margin-left: 5px; }
 .business-name-input { width: 100%; border: 1px solid #d7d1c5; background: #faf8f2; color: #183b35; outline: none; padding: 11px 15px; font-size: 13px; }

@@ -14,7 +14,6 @@ const clearLogoButton = document.querySelector('#clear-logo');
 const uploadTitle = document.querySelector('#upload-title');
 const uploadHint = document.querySelector('#upload-hint');
 const logoName = document.querySelector('#logo-name');
-const removeLogoButton = document.querySelector('#remove-logo');
 const foregroundInput = document.querySelector('#foreground-color');
 const backgroundInput = document.querySelector('#background-color');
 const errorLevelInput = document.querySelector('#error-level');
@@ -59,9 +58,40 @@ async function renderQr() {
   await QRCode.toCanvas(canvas, value, { width: 1080, margin: 4, errorCorrectionLevel: errorLevelInput.value, color: { dark: foregroundInput.value, light: backgroundInput.value } });
   canvas.style.removeProperty('width');
   canvas.style.removeProperty('height');
+  if (logoImage || businessNameInput.value.trim()) {
+    const context = canvas.getContext('2d');
+    const logoSize = canvas.width * 0.2;
+    const x = (canvas.width - logoSize) / 2;
+    const y = (canvas.height - logoSize) / 2;
+    const padding = logoSize * 0.16;
+    context.fillStyle = backgroundInput.value;
+    context.beginPath();
+    if (logoShapeInput.value === 'circle') {
+      context.arc(canvas.width / 2, canvas.height / 2, (logoSize + padding * 2) / 2, 0, Math.PI * 2);
+    } else {
+      context.roundRect(x - padding, y - padding, logoSize + padding * 2, logoSize + padding * 2, logoShapeInput.value === 'rounded' ? logoSize * 0.12 : 0);
+    }
+    context.fill();
+    context.save();
+    if (logoShapeInput.value === 'circle') {
+      context.beginPath();
+      context.arc(canvas.width / 2, canvas.height / 2, logoSize / 2, 0, Math.PI * 2);
+      context.clip();
+    }
+    if (logoImage) {
+      context.drawImage(logoImage, x, y, logoSize, logoSize);
+    } else {
+      context.fillStyle = foregroundInput.value;
+      context.font = `600 ${logoSize * 0.34}px "DM Sans", sans-serif`;
+      context.textAlign = 'center';
+      context.textBaseline = 'middle';
+      context.fillText(getBusinessIcon(businessNameInput.value.trim()), canvas.width / 2, canvas.height / 2);
+    }
+    context.restore();
+  }
   emptyState.hidden = true;
   downloadButton.disabled = false;
-  scanDetail.textContent = 'High contrast · Print ready';
+  scanDetail.textContent = logoImage ? 'Logo embedded · High contrast' : businessNameInput.value.trim() ? 'Business mark embedded · High contrast' : 'High contrast · Print ready';
 }
 
 contentInput.addEventListener('input', () => { updateIdentityState(); renderQr(); });
@@ -87,9 +117,8 @@ logoInput.addEventListener('change', () => {
   });
   reader.readAsDataURL(file);
   logoName.textContent = file.name;
-  removeLogoButton.hidden = false;
 });
-removeLogoButton.addEventListener('click', () => {
+function clearSelectedLogo() {
   logoImage = null;
   logoInput.value = '';
   logoPreview.src = '';
@@ -99,13 +128,20 @@ removeLogoButton.addEventListener('click', () => {
   uploadTitle.textContent = 'Add logo';
   uploadHint.textContent = 'PNG, JPG or WEBP';
   logoName.textContent = '';
-  removeLogoButton.hidden = true;
   renderQr();
-});
+}
 clearLogoButton.addEventListener('click', (event) => {
   event.preventDefault();
   event.stopPropagation();
-  removeLogoButton.click();
+  clearSelectedLogo();
+});
+clearLogoButton.addEventListener('pointerdown', (event) => {
+  event.preventDefault();
+  event.stopPropagation();
+});
+clearLogoButton.addEventListener('mousedown', (event) => {
+  event.preventDefault();
+  event.stopPropagation();
 });
 downloadButton.addEventListener('click', () => { const link = document.createElement('a'); link.download = 'markqr-business-code.png'; link.href = canvas.toDataURL('image/png'); link.click(); });
 updateNameMonogram();
