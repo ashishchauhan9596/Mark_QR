@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f4f1ea" />
+    <link rel="icon" type="image/svg+xml" href="/markqr-favicon.svg" />
+    <title>MarkQR | Business QR generator</title>
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <a class="brand" href="/" aria-label="MarkQR home"><img class="brand-logo" src="/markqr-logo.svg" alt="MarkQR" /></a>
+        <span class="topbar-note">Business-ready QR codes</span>
+      </header>
+      <main class="workspace">
+        <section class="intro">
+          <p class="eyebrow">QR studio / 01</p>
+          <h1>Make your mark<br /><em>easy to scan.</em></h1>
+          <p class="intro-copy">Create a polished QR code for your menu, storefront, campaign, or next big idea.</p>
+          <div class="trust-line"><span class="status-dot"></span> Generates locally in your browser</div>
+        </section>
+        <section class="generator-panel" aria-label="QR code generator">
+          <div class="panel-header"><div><p class="section-label">01 / Content</p><h2>What should this code open?</h2></div><span class="live-pill"><span></span> Live</span></div>
+          <label class="field-label" for="qr-content">Your link or message</label>
+          <textarea id="qr-content" rows="3" placeholder="https://yourbusiness.com" autofocus></textarea>
+          <fieldset id="identity-controls" class="identity-fieldset" disabled>
+          <div class="section-divider"></div>
+          <div class="customize-heading"><div><p class="section-label">02 / Identity</p><h2>Add your look</h2></div><span class="optional">Optional</span></div>
+          <div class="identity-grid">
+            <label class="upload-zone" for="logo-upload"><input id="logo-upload" type="file" accept="image/png,image/jpeg,image/webp" /><img id="logo-preview" class="logo-preview" alt="Selected logo preview" hidden /><span id="name-monogram" class="name-monogram" hidden></span><button id="clear-logo" class="clear-logo" type="button" aria-label="Remove selected logo" hidden>×</button><span class="upload-icon">+</span><span id="upload-title" class="upload-title">Add logo</span><span id="upload-hint" class="upload-hint">PNG, JPG or WEBP</span><span id="logo-name" class="logo-name"></span></label>
+            <div class="color-controls">
+              <label class="business-name-control" for="business-name"><span>Business short name</span><small>Fallback when no logo</small><input id="business-name" class="business-name-input" type="text" maxlength="24" placeholder="e.g. Acme Cafe" /></label>
+              <label class="color-control" for="foreground-color"><span>Code color</span><span class="color-input-wrap"><input id="foreground-color" type="color" value="#183b35" /><span id="foreground-value">#183B35</span></span></label>
+              <label class="color-control" for="background-color"><span>Background</span><span class="color-input-wrap"><input id="background-color" type="color" value="#fffdf8" /><span id="background-value">#FFFDF8</span></span></label>
+            </div>
+          </div>
+          <div class="settings-row"><label for="error-level">QR protection</label><select id="error-level"><option value="Q">Strong</option><option value="H" selected>Maximum</option></select></div>
+          <div class="settings-row shape-row"><label for="logo-shape">Logo box shape</label><select id="logo-shape"><option value="square">Rectangle</option><option value="rounded" selected>Rounded</option><option value="circle">Circle</option></select></div>
+          <button id="remove-logo" class="remove-logo" type="button" hidden>Remove logo</button>
+          </fieldset>
+        </section>
+        <aside class="preview-panel"><div class="preview-topline"><span>Preview</span><span>1080 × 1080</span></div><div class="qr-stage"><canvas id="qr-canvas" width="1080" height="1080"></canvas><div id="empty-state">Your QR<br /><em>appears here</em></div></div><div class="preview-footer"><div><strong id="scan-label">Ready to scan</strong><span id="scan-detail">Add content to begin</span></div><button id="download-button" class="download-button" type="button" disabled><span>↓</span> Download PNG</button></div></aside>
+      </main>
+      <footer class="footer"><span>MARKQR — SIMPLE TOOLS FOR GROWING BUSINESSES</span><span>PNG / PRINT READY</span></footer>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

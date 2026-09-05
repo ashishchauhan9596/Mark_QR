@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-labelledby="title">
+  <title id="title">MarkQR</title>
+  <rect x="36" y="36" width="184" height="184" rx="48" fill="#ef5b3f"/>
+  <path d="M62 62h58v58H62V62Zm18 18v22h22V80H80Zm58-18h58v58h-58V62Zm18 18v22h22V80h-22ZM62 138h58v58H62v-58Zm18 18v22h22v-22H80Zm66-18h20v20h-20v-20Zm-26 26h26v26h-26v-26Zm52-26h26v58h-26v-58Z" fill="#fffdf8"/>
+</svg>

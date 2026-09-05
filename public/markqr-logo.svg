@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 96" role="img" aria-labelledby="title desc">
+  <title id="title">MarkQR logo</title>
+  <desc id="desc">A geometric QR badge beside the MarkQR wordmark.</desc>
+  <rect x="4" y="12" width="72" height="72" rx="18" fill="#e75c3d"/>
+  <path d="M18 26h20v20H18V26Zm6 6v8h8v-8h-8Zm18-6h20v20H42V26Zm6 6v8h8v-8h-8ZM18 50h20v20H18V50Zm6 6v8h8v-8h-8Zm24-6h8v8h-8v-8Zm-6 12h14v8H42v-8Zm20-12h8v20h-8V50Z" fill="#fffdf8"/>
+  <text x="94" y="66" fill="#183b35" font-family="DM Sans, Arial, sans-serif" font-size="52" font-weight="700" letter-spacing="-2">Mark<tspan fill="#e75c3d">QR</tspan></text>
+</svg>
