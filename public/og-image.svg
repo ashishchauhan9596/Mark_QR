@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">MarkQR business QR code generator</title>
+  <desc id="desc">Create polished, print-ready QR codes locally in your browser.</desc>
+  <rect width="1200" height="630" fill="#f4f1ea"/>
+  <rect x="72" y="72" width="486" height="486" rx="42" fill="#183b35"/>
+  <rect x="148" y="148" width="112" height="112" fill="#fffdf8"/>
+  <rect x="176" y="176" width="56" height="56" fill="#183b35"/>
+  <rect x="370" y="148" width="112" height="112" fill="#fffdf8"/>
+  <rect x="398" y="176" width="56" height="56" fill="#183b35"/>
+  <rect x="148" y="370" width="112" height="112" fill="#fffdf8"/>
+  <rect x="176" y="398" width="56" height="56" fill="#183b35"/>
+  <path d="M370 370h56v56h-56zm84 0h28v112h-28zm-84 84h84v28h-84z" fill="#fffdf8"/>
+  <text x="624" y="254" fill="#183b35" font-family="Georgia, serif" font-size="86" font-weight="700">Mark<tspan fill="#e75c3d">QR</tspan></text>
+  <text x="630" y="342" fill="#e75c3d" font-family="Arial, sans-serif" font-size="27" font-weight="700" letter-spacing="5">BUSINESS-READY QR CODES</text>
+  <text x="630" y="405" fill="#625b50" font-family="Arial, sans-serif" font-size="28">Create polished, print-ready codes</text>
+  <text x="630" y="447" fill="#625b50" font-family="Arial, sans-serif" font-size="28">locally in your browser.</text>
+</svg>

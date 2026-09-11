@@ -10,6 +10,16 @@
 .logo-preview { width: 42px; height: 42px; object-fit: contain; border-radius: 6px; margin-bottom: 2px; background: #fffdf8; }
 .logo-preview:not([hidden]) + .upload-icon { display: none; }
 .name-monogram { width: 42px; height: 42px; display: grid; place-items: center; border-radius: 6px; background: #183b35; color: #fffdf8; font: 600 12px 'DM Sans', sans-serif; letter-spacing: -.03em; margin-bottom: 2px; }
+.seo-content { max-width: 1180px; margin: clamp(48px, 8vw, 96px) auto 0; padding: 0 clamp(20px, 4vw, 56px); display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(32px, 7vw, 96px); }
+.seo-content h2 { margin: 12px 0 22px; max-width: 520px; font-size: clamp(28px, 3vw, 42px); line-height: 1.05; }
+.seo-content ol, .seo-content dl { margin: 0; padding: 0; color: #625b50; line-height: 1.65; }
+.seo-content ol { padding-left: 24px; }
+.seo-content li { padding-left: 8px; margin-bottom: 16px; }
+.seo-content li strong { color: #302d27; }
+.seo-content dt { color: #302d27; font-weight: 700; margin-top: 20px; }
+.seo-content dt:first-child { margin-top: 0; }
+.seo-content dd { margin: 5px 0 0; }
+@media (max-width: 620px) { .seo-content { grid-template-columns: 1fr; gap: 48px; padding: 0; } }
 .name-monogram[hidden] { display: none; }
 .name-monogram:not([hidden]) + .upload-icon { display: none; }
 .identity-fieldset { border: 0; padding: 0; margin: 0; min-width: 0; }

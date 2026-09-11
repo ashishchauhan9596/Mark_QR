@@ -3,9 +3,77 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Create polished, print-ready QR codes for your restaurant menu, storefront, or marketing campaign. Works locally in your browser." />
+    <meta name="author" content="MarkQR" />
+    <meta name="robots" content="index, follow" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
     <meta name="theme-color" content="#f4f1ea" />
+    <link rel="canonical" href="https://mark-qr.vercel.app/" />
     <link rel="icon" type="image/svg+xml" href="/markqr-favicon.svg" />
-    <title>MarkQR | Business QR generator</title>
+    <title>Free Local QR Code Generator | MarkQR</title>
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="MarkQR" />
+    <meta property="og:url" content="https://mark-qr.vercel.app/" />
+    <meta property="og:title" content="MarkQR - Business-ready QR codes" />
+    <meta property="og:description" content="Generate high-quality QR codes locally in your browser." />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:image" content="https://mark-qr.vercel.app/og-image.svg" />
+    <meta property="og:image:alt" content="MarkQR business QR code generator" />
+    <meta property="og:image:type" content="image/svg+xml" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Free Local QR Code Generator | MarkQR" />
+    <meta name="twitter:description" content="Generate high-quality QR codes locally in your browser." />
+    <meta name="twitter:image" content="https://mark-qr.vercel.app/og-image.svg" />
+    <meta name="twitter:image:alt" content="MarkQR business QR code generator" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebApplication",
+            "name": "MarkQR",
+            "url": "https://mark-qr.vercel.app/",
+            "description": "Create polished, print-ready QR codes for your restaurant menu, storefront, or marketing campaign.",
+            "applicationCategory": "BusinessApplication",
+            "operatingSystem": "Any",
+            "offers": {
+              "@type": "Offer",
+              "price": "0",
+              "priceCurrency": "USD"
+            }
+          },
+          {
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "Are these QR codes free for commercial use?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes. You can use the QR codes you create with MarkQR for restaurants, storefronts, campaigns, and other commercial projects."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Do QR codes created with MarkQR expire?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "No. MarkQR creates static QR codes that do not depend on a subscription or redirect service. They continue to work as long as the encoded destination is available."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Is my information uploaded?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "No. QR generation and logo processing happen locally in your browser, so your content and uploaded logo stay on your device."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    </script>
   </head>
   <body>
     <div class="app-shell">
@@ -41,6 +109,29 @@
         </section>
         <aside class="preview-panel"><div class="preview-topline"><span>Preview</span><span>1080 × 1080</span></div><div class="qr-stage"><canvas id="qr-canvas" width="1080" height="1080"></canvas><div id="empty-state">Your QR<br /><em>appears here</em></div></div><div class="preview-footer"><div><strong id="scan-label">Ready to scan</strong><span id="scan-detail">Add content to begin</span></div><button id="download-button" class="download-button" type="button" disabled><span>↓</span> Download PNG</button></div></aside>
       </main>
+      <section class="seo-content" aria-labelledby="qr-guide-heading">
+        <div class="seo-guide">
+          <p class="eyebrow">A better code / 02</p>
+          <h2 id="qr-guide-heading">How to create a high-quality QR code</h2>
+          <ol>
+            <li><strong>Enter your destination.</strong> Add a website link, menu, contact detail, or message to the generator.</li>
+            <li><strong>Customize your design.</strong> Choose a high-contrast color combination and add your logo or business mark.</li>
+            <li><strong>Download and test it.</strong> Download the print-ready PNG and scan it from the size and distance where people will use it.</li>
+          </ol>
+        </div>
+        <div class="seo-faq" aria-labelledby="faq-heading">
+          <p class="eyebrow">Good to know / 03</p>
+          <h2 id="faq-heading">Frequently Asked Questions</h2>
+          <dl>
+            <dt>Are these QR codes free for commercial use?</dt>
+            <dd>Yes. You can use the QR codes you create with MarkQR for restaurants, storefronts, campaigns, and other commercial projects.</dd>
+            <dt>Do QR codes created with MarkQR expire?</dt>
+            <dd>No. MarkQR creates static QR codes that do not depend on a subscription or redirect service. They continue to work as long as the encoded destination is available.</dd>
+            <dt>Is my information uploaded?</dt>
+            <dd>No. QR generation and logo processing happen locally in your browser, so your content and uploaded logo stay on your device.</dd>
+          </dl>
+        </div>
+      </section>
       <footer class="footer"><span>MARKQR — SIMPLE TOOLS FOR GROWING BUSINESSES</span><span>PNG / PRINT READY</span></footer>
     </div>
     <script type="module" src="/src/main.js"></script>
